@@ -25,6 +25,7 @@ public class PrimeObservableThread implements Runnable, Subject {
             if (isPrimeNumber(numCount)) {
                 primeNumber = numCount;
                 System.out.println(primeNumber);
+                notifyObserver();
             }
             try {
                 Thread.sleep(SLEEPTIME); // 1초 쉼
@@ -60,7 +61,7 @@ public class PrimeObservableThread implements Runnable, Subject {
     @Override
     public void notifyObserver() {
         for(int i=0; i< observers.size();i++){
-            observers.get(i).update();
+            observers.get(i).update(primeNumber);
         }
     }
 }

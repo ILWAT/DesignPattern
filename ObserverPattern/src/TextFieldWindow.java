@@ -25,7 +25,8 @@ public class TextFieldWindow extends FrameWindow implements Observer{
     }
 
     @Override
-    public void update() {
-
+    public void update(int n) {
+        Integer n1 = n;
+        updateText(n1.toString());
     }
 }

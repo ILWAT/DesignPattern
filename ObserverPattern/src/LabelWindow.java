@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class LabelWindow extends FrameWindow implements Observer {
     private JLabel label;
 
+
     public LabelWindow(String title, int x, int y, int width, int height) {
         super(title, x, y, width, height);
     }
@@ -25,7 +26,8 @@ public class LabelWindow extends FrameWindow implements Observer {
     }
 
     @Override
-    public void update() {
-
+    public void update(int n) {
+        Integer n1 = n;
+        updateText(n1.toString());
     }
 }
